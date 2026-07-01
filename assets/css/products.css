@@ -1,0 +1,385 @@
+body{
+    background:#f5f7fb;
+    font-family:Poppins,sans-serif;
+    font-size:14px;
+    color:#333;
+}
+
+/* ===== Layout ===== */
+.wrapper{
+    display:flex;
+    min-height:100vh;
+}
+
+.main{
+    flex:1;
+    background:#f5f7fb;
+}
+
+.content{
+    padding:25px;
+}
+
+/* ===== Container ===== */
+.container{
+    width:95%;
+    margin:20px auto;
+}
+
+/* ===== Page Title ===== */
+.page-title{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+    flex-wrap:wrap;
+}
+
+.page-title h1{
+    font-size:24px;
+    font-weight:600;
+    margin:0;
+}
+
+.page-title p{
+    font-size:13px;
+    color:#777;
+    margin-top:4px;
+}
+
+/* ===== Buttons ===== */
+.btn-add{
+    display:inline-block;
+    padding:10px 16px;
+    background:#8B0000;
+    color:#fff;
+    text-decoration:none;
+    border-radius:8px;
+    font-size:13px;
+    transition:.2s;
+}
+
+.btn-add:hover{
+    background:#a00000;
+}
+
+.btn-save{
+    width:100%;
+    padding:12px;
+    background:#8B0000;
+    color:#fff;
+    border:none;
+    border-radius:8px;
+    font-size:14px;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.btn-save:hover{
+    background:#a00000;
+}
+
+.btn-edit,
+.btn-delete{
+    display:inline-block;
+    padding:6px 10px;
+    border-radius:6px;
+    text-decoration:none;
+    font-size:12px;
+    color:#fff;
+}
+
+.btn-edit{
+    background:#3498db;
+}
+
+.btn-edit:hover{
+    background:#2c80b9;
+}
+
+.btn-delete{
+    background:#e74c3c;
+}
+
+.btn-delete:hover{
+    background:#c0392b;
+}
+
+/* ===== Table ===== */
+table{
+    width:100%;
+    background:#fff;
+    border-radius:10px;
+    overflow:hidden;
+    border-collapse:collapse;
+    box-shadow:0 3px 10px rgba(0,0,0,.05);
+}
+
+th{
+    background:#8B0000;
+    color:#fff;
+    font-size:13px;
+    font-weight:600;
+    padding:12px;
+    text-align:left;
+}
+
+td{
+    padding:10px 12px;
+    font-size:13px;
+    border-bottom:1px solid #eee;
+    color:#444;
+}
+
+tbody tr:hover{
+    background:#fafafa;
+}
+
+/* ===== Form ===== */
+.form-box{
+    background:#fff;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,.05);
+    max-width:700px;
+}
+
+.form-group{
+    margin-bottom:15px;
+}
+
+.form-group label{
+    display:block;
+    margin-bottom:6px;
+    font-size:13px;
+    font-weight:600;
+}
+
+.form-control{
+    width:100%;
+    padding:10px;
+    border:1px solid #ddd;
+    border-radius:8px;
+    font-size:13px;
+    background:#fff;
+}
+
+/* ===== Cards ===== */
+.cards{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.card{
+    flex:1;
+    min-width:250px;
+    background:#fff;
+    border-radius:12px;
+    padding:20px;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,.05);
+}
+
+.card i{
+    color:#8B0000;
+    margin-bottom:10px;
+}
+
+.card h3{
+    margin-bottom:5px;
+}
+
+.card p{
+    color:#777;
+}
+/* ===== FIX UI BACKUP / DASHBOARD CLEAN ===== */
+
+.content {
+    padding: 20px;
+}
+
+/* tiêu đề gọn hơn */
+.page-title h1 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.page-title p {
+    font-size: 13px;
+    color: #888;
+}
+
+/* card backup/restore */
+.cards, .backup-wrapper {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.card {
+    flex: 1;
+    min-width: 280px;
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    text-align: center;
+}
+
+/* icon nhỏ lại */
+.card i {
+    font-size: 28px !important;
+    margin-bottom: 10px;
+}
+
+/* text nhỏ hơn */
+.card h3 {
+    font-size: 16px;
+    margin-bottom: 6px;
+}
+
+.card p {
+    font-size: 13px;
+    color: #777;
+}
+
+/* button gọn */
+.btn-save,
+.btn-add {
+    padding: 10px 16px;
+    font-size: 14px;
+    border-radius: 8px;
+}
+
+/* input gọn */
+.form-control {
+    font-size: 14px;
+    padding: 10px;
+}
+
+/* table gọn hơn */
+table th,
+table td {
+    padding: 10px;
+    font-size: 14px;
+}
+
+/* ===== FIX LOGO SIDEBAR (QUAN TRỌNG) ===== */
+
+.sidebar img,
+.logo img {
+    max-width: 120px;
+    height: auto;
+}
+
+/* tránh logo chiếm full màn hình */
+.sidebar {
+    width: 230px;
+}
+/* =========================
+   Backup / Restore
+========================= */
+
+.cards{
+    display:flex;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+.card{
+
+    flex:1;
+    min-width:340px;
+
+    background:#fff;
+
+    border-radius:18px;
+
+    padding:35px;
+
+    text-align:center;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+}
+
+.card i{
+
+    font-size:55px;
+
+    color:#8B0000;
+
+    margin-bottom:20px;
+
+}
+
+.card h3{
+
+    margin-bottom:15px;
+
+    font-size:22px;
+
+}
+
+.card p{
+
+    color:#777;
+
+    margin-bottom:25px;
+
+    line-height:1.6;
+
+}
+
+.card form{
+
+    margin-top:15px;
+
+}
+
+.card input[type=file]{
+
+    width:100%;
+
+    padding:10px;
+
+    border:1px solid #ddd;
+
+    border-radius:8px;
+
+    margin-bottom:20px;
+
+}
+
+.card .btn-save{
+
+    width:100%;
+
+}
+
+.card .btn-edit{
+
+    width:100%;
+
+    background:#0d6efd;
+
+    color:white;
+
+    border:none;
+
+    padding:14px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+}
+
+.card .btn-edit:hover{
+
+    background:#0b5ed7;
+
+}
