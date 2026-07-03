@@ -1,7 +1,13 @@
 <?php
 
+session_start();
+
 include("../../includes/auth_admin.php");
 include("../../config/database.php");
+
+require("../../admin/send_account.php");
+require("../../admin/send_otp.php");
+
 include("../../includes/header.php");
 
 if(isset($_POST['save'])){
@@ -9,17 +15,53 @@ if(isset($_POST['save'])){
     $username = trim($_POST['username']);
     $password = trim($_POST['password']);
     $fullname = trim($_POST['fullname']);
+    $email = trim($_POST['email']);
     $role = $_POST['role'];
 
-    mysqli_query($conn,"
-        INSERT INTO users(username,password,fullname,role)
-        VALUES('$username','$password','$fullname','$role')
-    ");
+    if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+    die("Email không đúng định dạng!");
+    }
 
-    header("Location: index.php");
+    $checkUser = mysqli_query(
+    $conn,
+    "SELECT * FROM users WHERE username='$username'"
+    );
+
+    if(mysqli_num_rows($checkUser) > 0){
+        die("Tên đăng nhập đã tồn tại!");
+    }
+
+    $checkEmail = mysqli_query(
+    $conn,
+    "SELECT * FROM users WHERE email='$email'"
+    );
+
+    if(mysqli_num_rows($checkEmail) > 0){
+        die("Email đã tồn tại!");
+    }
+
+    $otp = rand(100000,999999);
+
+$_SESSION['new_employee'] = [
+    'username' => $username,
+    'password' => $password,
+    'fullname' => $fullname,
+    'email'    => $email,
+    'role'     => $role,
+    'otp'      => $otp
+];
+
+if(sendOTP($email,$otp)){
+
+    header("Location: verify_employee_otp.php");
     exit;
-}
 
+}else{
+
+    die("Không gửi được OTP!");
+
+}
+}
 ?>
 
 <link rel="stylesheet" href="../../assets/css/dashboard.css">
@@ -66,6 +108,11 @@ if(isset($_POST['save'])){
 <div class="form-group">
 <label>Họ tên</label>
 <input type="text" name="fullname" required>
+</div>
+
+<div class="form-group">
+<label>Email</label>
+<input type="email" name="email" required>
 </div>
 
 <div class="form-group">

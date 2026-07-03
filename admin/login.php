@@ -190,6 +190,12 @@ color:#777;
 <input type="password" name="password" required>
 </div>
 
+<div style="text-align:right;margin-bottom:15px;">
+    <a href="forgot_password.php">
+        Quên mật khẩu?
+    </a>
+</div>
+
 <button name="login">
 <i class="fa-solid fa-right-to-bracket"></i> Đăng nhập
 </button>
